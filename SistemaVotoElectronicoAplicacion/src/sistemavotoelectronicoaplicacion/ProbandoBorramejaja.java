@@ -9,6 +9,9 @@ package sistemavotoelectronicoaplicacion;
  *
  * @author pc
  */
-public class ProbandoBorramejaja {
+public class ProbandoBorramejaja {int asd = 0;
+
+
+int dfg = 234;
     
 }
