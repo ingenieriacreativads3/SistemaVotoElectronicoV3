@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemavotoelectronicoaplicacion;
-
-import javax.swing.*;
-import sistemavotoelectronicoaplicacion.vista.FVotante;
+package sistemavotoelectronicoaplicacion.vista;
 
 /**
  *
  * @author pc
  */
-public class ProbandoBorramejaja {int asd = 0;
-
-
-int dfg = 234;
+public class IVista {
     
 }
