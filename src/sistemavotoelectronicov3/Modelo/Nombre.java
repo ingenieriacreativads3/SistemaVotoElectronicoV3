@@ -4,22 +4,39 @@
  * and open the template in the editor.
  */
 package sistemavotoelectronicov3.Modelo;
-
 import java.util.*;
 
-public class Persona {
+/**
+
+ @author Tomas
+ */
+public class Nombre{
     
     private final int id;
-    private Nombre nombre;
-    private Nombre apellido;
-    private int numeroDocumento;
-    private Direccion direccion;
-    private Date fechaNacimiento;
-    private Localidad lugarNacimiento;
+    private String valor;
             
-    protected final static Persona OBJETO_INVALIDO = new Persona();
+    protected final static Nombre OBJETO_INVALIDO = new Nombre();
 
-    private static Set<Persona> listaObjetos = new HashSet<>();
+    private static Set<Nombre> listaObjetos = new HashSet<>();
+    
+    public String getValor() {
+
+        String valorDevolver = "Sin valor";
+
+        //Si el valor requerido no nulo
+        if(this.valor != null){
+
+            valorDevolver = this.valor;
+
+        }else{
+
+            //...se establecio un valor por defecto
+
+        }
+
+        return valorDevolver;
+
+    }
 
     private int getNewId(){
 
@@ -39,7 +56,7 @@ public class Persona {
 
     //Constructor
 
-    protected Persona() {
+    private Nombre() {
 
         //Asignar un identificador
         this.id = getNewId();
@@ -47,13 +64,13 @@ public class Persona {
 
     }
 
-    protected static Persona nuevo(){
+    protected static Nombre nuevo(){
 
         //Crear un objeto a devolver
-        Persona objetoDevolver = Persona.OBJETO_INVALIDO;
+        Nombre objetoDevolver = Nombre.OBJETO_INVALIDO;
 
         //Crear un nuevo objeto
-        Persona objetoNuevo = new Persona();
+        Nombre objetoNuevo = new Nombre();
 
         //Agregar a la lista de control
         Estado seAgrego = addNewObjeto(objetoNuevo);
@@ -84,10 +101,10 @@ public class Persona {
         Estado estadoDevolver= Estado.FRACASO;
 
         //Si el objeto recibido es del tipo correcto
-        if(objetoActual.getClass() == Persona.class){
+        if(objetoActual.getClass() == Nombre.class){
 
             //Obtener el objeto requerido
-            Persona objetoAgregar = (Persona)objetoActual;
+            Nombre objetoAgregar = (Nombre)objetoActual;
 
             //Agregar el nuevo elemento a la lista
             boolean seAgrego;
@@ -128,7 +145,7 @@ public class Persona {
         if(objetoActual == null){return false;}
         if(this.getClass() != objetoActual.getClass()){return false;}
 
-        final Persona objetoRecibido = (Persona) objetoActual;
+        final Nombre objetoRecibido = (Nombre) objetoActual;
 
         if(this.hashCode() != objetoRecibido.hashCode()){return false;}
 
@@ -139,17 +156,15 @@ public class Persona {
     @Override
     public int hashCode() {
 
-        return this.id;
+        return Integer.valueOf(this.valor);
 
     }
     
     @Override
     public String toString() {
         
-        return "Definir";
+        return this.valor.toString();
         
     }
-    
-    
     
 }

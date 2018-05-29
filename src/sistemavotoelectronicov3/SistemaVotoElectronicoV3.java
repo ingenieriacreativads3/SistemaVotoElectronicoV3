@@ -5,13 +5,19 @@
  */
 package sistemavotoelectronicov3;
 
+import java.net.URL;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -19,26 +25,16 @@ import javafx.stage.Stage;
  */
 public class SistemaVotoElectronicoV3 extends Application {
     
+    
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(Stage primaryStage) throws Exception{
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        Parent root = FXMLLoader.load(getClass().getResource("VistaPrincipal.fxml"));
+        Scene scene = new Scene(root);
         
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
+        
     }
 
     /**
@@ -46,6 +42,14 @@ public class SistemaVotoElectronicoV3 extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    private void initRootLayout() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void showLoginView() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

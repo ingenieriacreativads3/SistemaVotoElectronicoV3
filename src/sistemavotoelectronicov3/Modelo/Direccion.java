@@ -7,8 +7,8 @@ package sistemavotoelectronicov3.Modelo;
 
 /**
  *
- * @author pc
+ * @author Tomás Contreras
  */
-public class FiscalDeMesa extends Persona{
+public class Direccion {
     
 }

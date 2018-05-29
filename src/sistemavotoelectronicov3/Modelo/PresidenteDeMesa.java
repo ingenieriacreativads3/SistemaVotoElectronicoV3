@@ -5,20 +5,11 @@
  */
 package sistemavotoelectronicov3.Modelo;
 
-import java.util.*;
-
 /**
  *
  * @author pc
  */
-public class Votante extends Persona{
-    
-    private int id;
-    private Estado estado;
-    private Date fechaEmisionVoto;
-    private Nombre codigoDeEmision;
-    
-    private Padron padron;
+public class PresidenteDeMesa extends Persona{
     
     
     

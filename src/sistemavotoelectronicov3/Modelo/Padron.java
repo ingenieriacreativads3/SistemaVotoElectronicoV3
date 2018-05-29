@@ -9,17 +9,14 @@ import java.util.*;
 
 /**
  *
- * @author pc
+ * @author Tomás Contreras
  */
-public class Votante extends Persona{
+public class Padron {
     
     private int id;
-    private Estado estado;
-    private Date fechaEmisionVoto;
-    private Nombre codigoDeEmision;
+    private Zona zonaDistribucion;
     
-    private Padron padron;
-    
+    //private Set<Votante> listaVotantes = new HashSet<>();
     
     
 }

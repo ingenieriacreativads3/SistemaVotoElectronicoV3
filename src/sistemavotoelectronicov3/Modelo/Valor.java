@@ -4,22 +4,22 @@
  * and open the template in the editor.
  */
 package sistemavotoelectronicov3.Modelo;
-
 import java.util.*;
 
 /**
- *
- * @author pc
+
+ @author Tomas
  */
-public class Votante extends Persona{
+public class Valor{
     
-    private int id;
-    private Estado estado;
-    private Date fechaEmisionVoto;
-    private Nombre codigoDeEmision;
+    /**
+     * Este identificador, indica cada cuanto se debe iterar por cada
+     * indentificador creado.
+     */
+    protected static final int SIGUIENTE_IDENTIFICADOR = 3;
     
-    private Padron padron;
     
-    
+
+    private Valor(){}
     
 }
