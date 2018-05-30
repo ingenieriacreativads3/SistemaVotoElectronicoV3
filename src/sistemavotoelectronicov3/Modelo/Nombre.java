@@ -38,7 +38,7 @@ public class Nombre{
 
     }
 
-    private int getNewId(){
+    private static int getNewId(){
 
         //Crear un nuevo identificador
         int idActual = listaObjetos.size();

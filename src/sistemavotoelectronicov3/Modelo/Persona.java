@@ -21,7 +21,7 @@ public class Persona {
 
     private static Set<Persona> listaObjetos = new HashSet<>();
 
-    private int getNewId(){
+    private static int getNewId(){
 
         //Crear un nuevo identificador
         int idActual = listaObjetos.size();
