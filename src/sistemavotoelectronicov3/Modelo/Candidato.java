@@ -11,4 +11,7 @@ package sistemavotoelectronicov3.Modelo;
  */
 public class Candidato extends Persona{
     
+    private int id;
+    private Funcion funcion;
+    
 }

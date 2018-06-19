@@ -11,6 +11,11 @@ package sistemavotoelectronicov3.Modelo;
  */
 public class PresidenteDeMesa extends Persona{
     
+    private int id;
+    private Autorizacion autorizacion;
+    private Nombre usuario;
+    private Nombre password;
+    
     
     
 }

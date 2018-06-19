@@ -11,4 +11,10 @@ package sistemavotoelectronicov3.Modelo;
  */
 public class Localidad {
     
+    private int id;
+    private String nombre;
+    private int codigoPostal;
+    private Provincia provincia;
+    
+    
 }

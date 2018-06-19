@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package sistemavotoelectronicov3.Modelo;
-import java.util.*;
 
 /**
  *
- * @author pc
+ * @author Agustin
  */
-public class Voto {
+public class CodigoDeEmision {
     
     private int id;
-    private Date fecha;
+    private Nombre codigo;
+    
     
 }

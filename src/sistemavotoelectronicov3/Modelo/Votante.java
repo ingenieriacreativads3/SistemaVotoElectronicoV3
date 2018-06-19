@@ -16,7 +16,7 @@ public class Votante extends Persona{
     private int id;
     private Estado estado;
     private Date fechaEmisionVoto;
-    private Nombre codigoDeEmision;
+    private CodigoDeEmision codigoDeEmision;
     
     private Padron padron;
     
