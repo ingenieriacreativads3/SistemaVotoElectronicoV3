@@ -5,31 +5,35 @@
  */
 package sistemavotoelectronicov3.Vista;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import sistemavotoelectronicov3.*;
+import javafx.application.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.stage.*;
 
 /**
- * FXML Controller class
  *
  * @author Tomás Contreras
  */
-public class VistaPrincipalController implements Initializable {
+public class VistaPrincipalController  extends Application{
 
     @FXML
     private Button primerboton;
     @FXML
     private ComboBox<?> primercombobox;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void start(Stage primaryStage) throws Exception {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("Vista/FXMLVistaPrincipal.fxml"));
+        Scene scene = new Scene(root);
+        
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        
+    }
+    
+    
     
 }
