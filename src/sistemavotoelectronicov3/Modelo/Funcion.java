@@ -7,14 +7,13 @@ package sistemavotoelectronicov3.Modelo;
 
 /**
  *
- * @author Tomás Contreras
+ * @author Agustin
  */
-public class Localidad {
+public class Funcion {
+    
     
     private int id;
-    private Nombre nombre;
-    private int codigoPostal;
-    private Provincia provincia;
-    
+    private Estado tipoCargo;
+    private Claustro claustro;
     
 }

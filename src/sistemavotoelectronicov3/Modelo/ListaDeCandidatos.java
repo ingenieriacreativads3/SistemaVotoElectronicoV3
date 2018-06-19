@@ -7,14 +7,11 @@ package sistemavotoelectronicov3.Modelo;
 
 /**
  *
- * @author Tomás Contreras
+ * @author Agustin
  */
-public class Localidad {
-    
+public class ListaDeCandidatos {
+   
     private int id;
     private Nombre nombre;
-    private int codigoPostal;
-    private Provincia provincia;
-    
-    
+    private int numeroDeLista;
 }
