@@ -5,6 +5,7 @@
  */
 package sistemavotoelectronicov3;
 
+import sistemavotoelectronicov3.*;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -45,11 +46,15 @@ public class SistemaVotoElectronicoV3 extends Application {
     }
 
     private void initRootLayout() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
+        
     }
 
     private void showLoginView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
+        
     }
     
 }
