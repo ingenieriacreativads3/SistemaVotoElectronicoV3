@@ -18,12 +18,10 @@ public class GestorControlador extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         
+        
+        
     }
     
-    public static void comenzar(String[] arg){
-        
-        
-        
-    } 
+    
     
 }
