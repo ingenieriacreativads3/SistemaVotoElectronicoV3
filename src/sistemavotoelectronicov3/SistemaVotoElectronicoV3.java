@@ -19,6 +19,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sistemavotoelectronicov3.Controlador.GestorControlador;
 
 /**
  *
@@ -42,7 +43,9 @@ public class SistemaVotoElectronicoV3 extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);
+        GestorControlador.comenzar(args);
+        
     }
 
     private void initRootLayout() {

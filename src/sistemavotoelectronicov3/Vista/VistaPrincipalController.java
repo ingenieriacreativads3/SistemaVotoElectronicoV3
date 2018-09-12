@@ -19,9 +19,17 @@ import javafx.stage.*;
 public class VistaPrincipalController  extends Application{
 
     @FXML
-    private Button primerboton;
+    private Button jTBCancelar;
     @FXML
-    private ComboBox<?> primercombobox;
+    private Button jBAceptar;
+    @FXML
+    private TextField jTBUsuario;
+    @FXML
+    private TextField jTBPassword;
+    @FXML
+    private Label jLUsuario;
+    @FXML
+    private Label jLPassword;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
