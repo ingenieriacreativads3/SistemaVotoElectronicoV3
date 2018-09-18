@@ -11,12 +11,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sistemavotoelectronicov3.*;
+import sistemavotoelectronicov3.Vista.FXMLVistaPrincipalController;
 
 /**
  *
  * @author Tomás Contreras
  */
 public class GestorControlador extends Application{
+    
+    public static Stage stagePrincipal = null;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -26,7 +29,7 @@ public class GestorControlador extends Application{
     
     public static void comenzar(String []args){
         
-        launch(args);
+        launch(FXMLVistaPrincipalController.class, args);
         
     }
     

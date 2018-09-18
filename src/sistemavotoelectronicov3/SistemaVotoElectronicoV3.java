@@ -30,13 +30,6 @@ public class SistemaVotoElectronicoV3 extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{        
-        
-        Parent root = FXMLLoader.load(getClass().getResource("Vista/FXMLVistaPrincipal.fxml"));
-        Scene scene = new Scene(root);
-        
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        
     }
 
     /**
@@ -45,18 +38,6 @@ public class SistemaVotoElectronicoV3 extends Application {
     public static void main(String[] args) {
         //launch(args);
         GestorControlador.comenzar(args);
-        
-    }
-
-    private void initRootLayout() {
-        
-        
-        
-    }
-
-    private void showLoginView() {
-        
-        
         
     }
     
