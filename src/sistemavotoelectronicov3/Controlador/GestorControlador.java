@@ -11,7 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sistemavotoelectronicov3.*;
-import sistemavotoelectronicov3.Vista.FXMLVistaPrincipalController;
+import sistemavotoelectronicov3.Vista.FXMLLoginController;
 
 /**
  *
@@ -29,7 +29,7 @@ public class GestorControlador extends Application{
     
     public static void comenzar(String []args){
         
-        launch(FXMLVistaPrincipalController.class, args);
+        launch(FXMLLoginController.class, args);
         
     }
     

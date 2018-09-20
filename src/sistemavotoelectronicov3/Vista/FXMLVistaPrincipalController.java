@@ -5,38 +5,48 @@
  */
 package sistemavotoelectronicov3.Vista;
 
-import sistemavotoelectronicov3.Controlador.*;
-import javafx.application.*;
-import javafx.fxml.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.*;
-
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+import sistemavotoelectronicov3.Modelo.Valor;
 
 /**
+ * FXML Controller class
  *
- * @author Tomás Contreras
+ * @author claudio
  */
-public class FXMLVistaPrincipalController  extends Application{
+public class FXMLVistaPrincipalController extends Application implements Initializable {
 
     @FXML
-    private Button jTBCancelar;
+    private Label jLFunciona;
+    @FXML
+    private Button jBCerrarSesion;
     @FXML
     private Button jBAceptar;
-    @FXML
-    private TextField jTBUsuario;
-    @FXML
-    private TextField jTBPassword;
-    @FXML
-    private Label jLUsuario;
-    @FXML
-    private Label jLPassword;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        
+        jBAceptar.setText(Valor.JB_ACEPTAR);
+        jBCerrarSesion.setText(Valor.JB_CERRAR_SESION);
+        jLFunciona.setText(Valor.JL_FUNCIONANDO);
+        
+    }    
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         
-        ControladorInterfaz.stagePrincipal = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("FXMLVistaPrincipal.fxml"));
         Scene scene = new Scene(root);
         
@@ -44,15 +54,5 @@ public class FXMLVistaPrincipalController  extends Application{
         primaryStage.show();
         
     }
-
-    @FXML
-    private void onMousePressed(MouseEvent event) {
-        
-        ControladorInterfaz asd = new ControladorInterfaz();
-        asd.iniciarSecion();
-        
-    }
-    
-    
     
 }

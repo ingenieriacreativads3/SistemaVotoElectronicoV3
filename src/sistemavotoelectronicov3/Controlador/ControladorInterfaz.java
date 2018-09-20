@@ -5,9 +5,10 @@
  */
 package sistemavotoelectronicov3.Controlador;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
-import sistemavotoelectronicov3.Vista.FXMLVistaPrincipal2Controller;
+import javafx.application.*;
+import javafx.stage.*;
+import sistemavotoelectronicov3.Modelo.*;
+import sistemavotoelectronicov3.Vista.*;
 
 /**
  *
@@ -17,11 +18,18 @@ public class ControladorInterfaz{
     
     public static Stage stagePrincipal;
     
-    public void iniciarSecion(){
+    public static void iniciarSesion(String[] args){
+        
+        //Usar este estado para algo
+        Estado comenzoConExito = GestionarIniciarSesion.iniciarSesion(args);
+        
+    }
+    
+    public void loginAceptar(){
         
         try {
             
-            FXMLVistaPrincipal2Controller asd = new FXMLVistaPrincipal2Controller();
+            FXMLVistaPrincipalController asd = new FXMLVistaPrincipalController();
             asd.start(stagePrincipal);
             
         } catch (Exception e) {

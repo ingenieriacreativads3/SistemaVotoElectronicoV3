@@ -1,25 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package sistemavotoelectronicov3;
 
 import sistemavotoelectronicov3.*;
-import java.net.URL;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import sistemavotoelectronicov3.Controlador.GestorControlador;
+import javafx.application.*;
+import javafx.stage.*;
+import sistemavotoelectronicov3.Controlador.*;
+import sistemavotoelectronicov3.Vista.*;
+import sistemavotoelectronicov3.Modelo.*;
 
 /**
  *
@@ -37,7 +23,7 @@ public class SistemaVotoElectronicoV3 extends Application {
      */
     public static void main(String[] args) {
         //launch(args);
-        GestorControlador.comenzar(args);
+        ControladorInterfaz.iniciarSesion(args);
         
     }
     
