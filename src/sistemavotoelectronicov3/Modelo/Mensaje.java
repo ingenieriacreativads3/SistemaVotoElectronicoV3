@@ -4,37 +4,40 @@
  * and open the template in the editor.
  */
 package sistemavotoelectronicov3.Modelo;
+
 import java.util.*;
 
 /**
-
- @author Tomas
+ *
+ * @author claudio
  */
-public class Nombre{
+public class Mensaje {
     
     private final int id;
-    private String valor;
+    private Nombre titulo;
+    private Nombre descripcion;
+    private Imagen icono;
             
-    protected final static Nombre OBJETO_INVALIDO = new Nombre();
+    protected final static Mensaje OBJETO_INVALIDO = new Mensaje();
 
-    private static Set<Nombre> listaObjetos = new HashSet<>();
+    private static Set<Mensaje> listaObjetos = new HashSet<>();
     
-    public String getValor() {
+    public Nombre getTitulo() {
 
-        String valorDevolver = "Sin valor";
+        Nombre tituloDevolver = Nombre.OBJETO_INVALIDO;
 
-        //Si el valor requerido no nulo
-        if(this.valor != null){
+        //Si el titulo requerido no nulo
+        if(this.titulo != null){
 
-            valorDevolver = this.valor;
+            tituloDevolver = this.titulo;
 
         }else{
 
-            //...se establecio un valor por defecto
+            //...se establecio un titulo por defecto
 
         }
 
-        return valorDevolver;
+        return tituloDevolver;
 
     }
 
@@ -56,7 +59,7 @@ public class Nombre{
 
     //Constructor
 
-    private Nombre() {
+    private Mensaje() {
 
         //Asignar un identificador
         this.id = getNewId();
@@ -64,13 +67,13 @@ public class Nombre{
 
     }
 
-    protected static Nombre nuevo(){
+    protected static Mensaje nuevo(){
 
         //Crear un objeto a devolver
-        Nombre objetoDevolver = Nombre.OBJETO_INVALIDO;
+        Mensaje objetoDevolver = Mensaje.OBJETO_INVALIDO;
 
         //Crear un nuevo objeto
-        Nombre objetoNuevo = new Nombre();
+        Mensaje objetoNuevo = new Mensaje();
 
         //Agregar a la lista de control
         Estado seAgrego = addNewObjeto(objetoNuevo);
@@ -84,7 +87,7 @@ public class Nombre{
         }else{
 
             //TODO capturar el error generado por un ingreso erroneo a la lista
-            //...se establecio un valor por defecto
+            //...se establecio un titulo por defecto
 
         }
 
@@ -97,14 +100,14 @@ public class Nombre{
 
     private static Estado addNewObjeto(Object objetoActual){
 
-        //Establecer un valor por defecto
+        //Establecer un titulo por defecto
         Estado estadoDevolver= Estado.FRACASO;
 
         //Si el objeto recibido es del tipo correcto
-        if(objetoActual.getClass() == Nombre.class){
+        if(objetoActual.getClass() == Mensaje.class){
 
             //Obtener el objeto requerido
-            Nombre objetoAgregar = (Nombre)objetoActual;
+            Mensaje objetoAgregar = (Mensaje)objetoActual;
 
             //Agregar el nuevo elemento a la lista
             boolean seAgrego;
@@ -117,14 +120,14 @@ public class Nombre{
 
             }else{
 
-                //...se establecio un valor por defecto
+                //...se establecio un titulo por defecto
 
             }//...fin if
 
 
         }else{
 
-            //...se establecio un valor por defecto
+            //...se establecio un titulo por defecto
 
         }//...fin if
 
@@ -150,14 +153,14 @@ public class Nombre{
     @Override
     public int hashCode() {
 
-        return Integer.valueOf(this.valor);
+        return this.id;
 
     }
     
     @Override
     public String toString() {
         
-        return this.valor.toString();
+        return this.titulo.toString();
         
     }
     

@@ -23,6 +23,10 @@ public class Valor{
     public static final String JL_USUARIO = "Usuario";
     public static final String JL_PASSWORD = "Password";
     public static final String JL_FUNCIONANDO = "Funcionando";
+    public static final boolean GRID_PANE_LINES_VISIBILIDAD = false;
+    public static final int ESPACIOS_VERTICALES = 10;
+    public static final int ESPACIOS_HORIZONTALES = 10;
+    public static final int PADDING = 10;
 
     private Valor(){}
     

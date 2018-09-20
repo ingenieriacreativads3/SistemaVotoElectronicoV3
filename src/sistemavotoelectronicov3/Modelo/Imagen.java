@@ -4,37 +4,42 @@
  * and open the template in the editor.
  */
 package sistemavotoelectronicov3.Modelo;
+
 import java.util.*;
 
 /**
-
- @author Tomas
+ *
+ * @author claudio
  */
-public class Nombre{
+public class Imagen {
     
     private final int id;
-    private String valor;
+    private Nombre nombre;
             
-    protected final static Nombre OBJETO_INVALIDO = new Nombre();
+    protected final static Imagen OBJETO_INVALIDO = new Imagen();
 
-    private static Set<Nombre> listaObjetos = new HashSet<>();
+    private static Set<Imagen> listaObjetos = new HashSet<>();
     
-    public String getValor() {
+    /**
+     *Devuelve el nombre de la imagen
+     * @return
+     */
+    public Nombre getNombre() {
 
-        String valorDevolver = "Sin valor";
+        Nombre nombreDevolver = Nombre.OBJETO_INVALIDO;
 
-        //Si el valor requerido no nulo
-        if(this.valor != null){
+        //Si el nombre requerido no nulo
+        if(this.nombre != null){
 
-            valorDevolver = this.valor;
+            nombreDevolver = this.nombre;
 
         }else{
 
-            //...se establecio un valor por defecto
+            //...se establecio un nombre por defecto
 
         }
 
-        return valorDevolver;
+        return nombreDevolver;
 
     }
 
@@ -56,21 +61,25 @@ public class Nombre{
 
     //Constructor
 
-    private Nombre() {
+    private Imagen() {
 
         //Asignar un identificador
         this.id = getNewId();
 
-
     }
 
-    protected static Nombre nuevo(){
+    /**
+     *Devuelve un objeto nuevo
+     * 
+     * @return
+     */
+    protected static Imagen nuevo(){
 
         //Crear un objeto a devolver
-        Nombre objetoDevolver = Nombre.OBJETO_INVALIDO;
+        Imagen objetoDevolver = Imagen.OBJETO_INVALIDO;
 
         //Crear un nuevo objeto
-        Nombre objetoNuevo = new Nombre();
+        Imagen objetoNuevo = new Imagen();
 
         //Agregar a la lista de control
         Estado seAgrego = addNewObjeto(objetoNuevo);
@@ -84,7 +93,7 @@ public class Nombre{
         }else{
 
             //TODO capturar el error generado por un ingreso erroneo a la lista
-            //...se establecio un valor por defecto
+            //...se establecio un nombre por defecto
 
         }
 
@@ -97,14 +106,14 @@ public class Nombre{
 
     private static Estado addNewObjeto(Object objetoActual){
 
-        //Establecer un valor por defecto
+        //Establecer un nombre por defecto
         Estado estadoDevolver= Estado.FRACASO;
 
         //Si el objeto recibido es del tipo correcto
-        if(objetoActual.getClass() == Nombre.class){
+        if(objetoActual.getClass() == Imagen.class){
 
             //Obtener el objeto requerido
-            Nombre objetoAgregar = (Nombre)objetoActual;
+            Imagen objetoAgregar = (Imagen)objetoActual;
 
             //Agregar el nuevo elemento a la lista
             boolean seAgrego;
@@ -117,14 +126,14 @@ public class Nombre{
 
             }else{
 
-                //...se establecio un valor por defecto
+                //...se establecio un nombre por defecto
 
             }//...fin if
 
 
         }else{
 
-            //...se establecio un valor por defecto
+            //...se establecio un nombre por defecto
 
         }//...fin if
 
@@ -150,14 +159,14 @@ public class Nombre{
     @Override
     public int hashCode() {
 
-        return Integer.valueOf(this.valor);
+        return this.id;
 
     }
     
     @Override
     public String toString() {
         
-        return this.valor.toString();
+        return this.nombre.toString();
         
     }
     

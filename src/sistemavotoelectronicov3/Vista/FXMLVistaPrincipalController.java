@@ -7,16 +7,15 @@ package sistemavotoelectronicov3.Vista;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Application;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.stage.Stage;
-import sistemavotoelectronicov3.Modelo.Valor;
+import java.util.*;
+import javafx.application.*;
+import javafx.fxml.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.text.*;
+import javafx.stage.*;
+import sistemavotoelectronicov3.Modelo.*;
 
 /**
  * FXML Controller class
@@ -24,23 +23,23 @@ import sistemavotoelectronicov3.Modelo.Valor;
  * @author claudio
  */
 public class FXMLVistaPrincipalController extends Application implements Initializable {
+    
+    private Set<Candidato> listaCandidatos = new HashSet<>();
 
     @FXML
-    private Label jLFunciona;
-    @FXML
-    private Button jBCerrarSesion;
-    @FXML
-    private Button jBAceptar;
+    private GridPane jGPPanel;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        jBAceptar.setText(Valor.JB_ACEPTAR);
-        jBCerrarSesion.setText(Valor.JB_CERRAR_SESION);
-        jLFunciona.setText(Valor.JL_FUNCIONANDO);
+        jGPPanel.setGridLinesVisible(Valor.GRID_PANE_LINES_VISIBILIDAD);
+        jGPPanel.setVgap(Valor.ESPACIOS_VERTICALES);
+        jGPPanel.setHgap(Valor.ESPACIOS_HORIZONTALES);
         
     }    
 
@@ -52,6 +51,42 @@ public class FXMLVistaPrincipalController extends Application implements Initial
         
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+    }
+    
+    public Estado setListaCandidatos(Set<Candidato> listaActual){
+        
+        Estado estadoDevolver = Estado.FRACASO;
+        boolean seAgregaron = true;
+        boolean seAgrego;
+        
+        for(Candidato candidatoActual : listaActual){
+            
+            seAgrego = this.listaCandidatos.add(candidatoActual);
+            
+            if(!seAgrego){
+                
+                seAgregaron = false;
+                
+            }else{
+                
+                //se establecio un valor por defecto
+                
+            }
+            
+        }
+        
+        if(seAgregaron){
+            
+            estadoDevolver = Estado.EXITO;
+            
+        }else{
+
+            //..se establecio un valor por defecto
+            
+        }
+        
+        return estadoDevolver;
         
     }
     
