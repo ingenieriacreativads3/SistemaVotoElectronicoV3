@@ -63,6 +63,50 @@ public class Nombre{
 
 
     }
+    
+    protected static Nombre nuevo(String palabraRecibida){
+
+        //Crear un objeto a devolver
+        Nombre objetoDevolver = Nombre.OBJETO_INVALIDO;
+
+        //Crear un nuevo objeto
+        Nombre objetoNuevo = new Nombre();
+
+        //Agregar a la lista de control
+        Estado seAgrego = addNewObjeto(objetoNuevo);
+
+        //Si se agrega con exito
+        if(seAgrego == Estado.EXITO){
+            
+            //Asignar el valor recibido por defecto
+            Estado seSeteo = objetoDevolver.setValor(palabraRecibida);
+            
+            if(seAgrego == Estado.EXITO){
+                
+                //Establecer el objeto a devolver
+                objetoDevolver = objetoNuevo;
+                
+            }else{
+                
+                //TODO aqui capturar el error producido por no setear el valor
+                //recibido como argumento
+                
+                //...se establecio un valor por defecto
+                
+            }//...fin
+
+        }else{
+
+            //TODO capturar el error generado por un ingreso erroneo a la lista
+            
+            //...se establecio un valor por defecto
+
+        }
+
+        //Devolver el objeto requerido
+        return objetoDevolver;
+
+    }
 
     protected static Nombre nuevo(){
 
@@ -91,6 +135,32 @@ public class Nombre{
         //Devolver el objeto requerido
         return objetoDevolver;
 
+    }
+    
+    //Set
+    
+    private Estado setValor(String valorRecibido){
+        
+        //Establecer un valor por defecto
+        Estado estadoDevolver = Estado.ERROR_VALOR_NO_SETEADO;
+        
+        //Asignar el valor recibido
+        this.valor = valorRecibido;
+        
+        //Verificar que la asignacion se realizo con exito
+        if(!this.equals(OBJETO_INVALIDO)){
+            
+            //...establecer el valor de dato no agregado
+            estadoDevolver = Estado.EXITO;
+            
+        }else{
+            
+            //...se establecio un valor por defecto
+            
+        }//..fin
+        
+        return estadoDevolver;
+        
     }
 
     //Manejo de lista

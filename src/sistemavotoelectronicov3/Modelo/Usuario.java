@@ -18,6 +18,7 @@ public class Usuario{
     private final Persona persona;
     private Nombre nombreUsuario;
     private Nombre pass;
+    private Date sesion;
 
     protected final static Usuario OBJETO_INVALIDO = new Usuario(Persona.OBJETO_INVALIDO);
 
@@ -41,7 +42,7 @@ public class Usuario{
 
     }*/
 
-    public static boolean existePass(Nombre passRecibido){
+    protected static boolean existePass(Nombre passRecibido){
 
         boolean existe = false;
 
@@ -66,7 +67,7 @@ public class Usuario{
 
     }
 
-    public static boolean existeNombreUsuario(Nombre nombreRecibido){
+    protected static boolean existeNombreUsuario(Nombre nombreRecibido){
 
         boolean existe = false;
 
@@ -124,6 +125,67 @@ public class Usuario{
         return idActual;
 
     }
+    
+    protected static Estado verificarUsserPass(String nombreActual, String passActual){
+        
+        //Establecer un valor por defecto
+        Estado loginVerificado = Estado.ERROR;
+        
+        //Obtener los argumentos
+        Nombre nombreRecibido = Nombre.nuevo(nombreActual);
+        Nombre passRecibido = Nombre.nuevo(passActual);
+        
+        if(!existeNombreUsuario(nombreRecibido)){
+            
+            //...establecer valor de usuario inexistente
+            loginVerificado = Estado.ERROR_NOMBRE_INEXISTENTE;
+            
+        }else{
+            
+            if(!existePass(passRecibido)){
+                
+                //...establecer valor de password inexistente
+                loginVerificado = Estado.ERROR_PASS_INEXISTENTE;
+                
+            }else{
+                
+                //...establecer valor de login correcto
+                loginVerificado = Estado.USSER_PASS_CORRECTOS;
+                
+            }
+            
+        }
+        
+        return loginVerificado;
+        
+    }
+
+    protected static boolean existeNombreUsuario(String nombreActual){
+
+        boolean existe = false;
+        
+        //Obtener el argumento recibido
+        Nombre nombreRecibido = Nombre.nuevo(nombreActual);
+
+        //Recorrer el conjunto de usuarios
+        for(Usuario usuarioActual : listaObjetos){
+
+            //Obtener el nombre del usuario actual
+            Nombre nombreUsuarioActual = usuarioActual.getNombreUsuario();
+
+            //Si el nombre actual es igual al nombre recibido
+            if(nombreUsuarioActual.equals(nombreRecibido)){
+
+                //...establecer la expresion correspondiente
+                existe = true;
+
+            }
+
+        }
+
+        return existe;
+
+    }
 
     //Constructor
 
@@ -166,6 +228,29 @@ public class Usuario{
     }
 
     //Manejo de lista
+    
+    protected static Usuario getUsuarioForNombre(Nombre nombreactual){
+        
+        //Establecer un valor por defecto
+        Usuario usuarioDevolver = Usuario.OBJETO_INVALIDO;
+        
+        for(Usuario usuarioActual : listaObjetos){
+            
+            if(usuarioActual.nombreUsuario.equals(nombreactual)){
+                
+                usuarioDevolver = usuarioActual;
+                
+            }else{
+                
+                //...se establecio un valor por defecto
+            }
+            
+        }
+        
+        //Devolver el usuario correspondiente
+        return usuarioDevolver;
+        
+    }//..fin funcion
 
     private static Estado addNewObjeto(Object objetoActual){
 
@@ -206,6 +291,12 @@ public class Usuario{
     }//...fin funcion
 
     //Setter
+    
+    protected static void setSesion(Usuario usuarioRecibido){
+        
+        usuarioRecibido.sesion = new Date();
+        
+    }
 
     protected void setNombreUsuario(Nombre nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
@@ -237,8 +328,14 @@ public class Usuario{
         return pass;
     }
 
-    private static Usuario getObjetoInvalido() {
+    /**
+     *Devuelve un objeto invalido
+     * @return
+     */
+    protected static Usuario getObjetoInvalido() {
+        
         return OBJETO_INVALIDO;
+        
     }
 
     private static Set<Usuario> getListaObjetos() {

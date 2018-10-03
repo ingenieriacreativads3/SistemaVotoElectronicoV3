@@ -12,6 +12,10 @@ import java.util.*;
  */
 public enum Estado{
     
+    USSER_PASS_CORRECTOS(25),
+    ERROR(24),
+    ERROR_VALOR_NO_SETEADO(23),
+    
     /**
      * Representa un documento para tutorias de una materia en partcular.
      * 
@@ -52,10 +56,13 @@ public enum Estado{
     MENSAJE_MOSTRADO(1);
 
     private final int Id;
+    //TODO poner el mensaje en el estado
+    //private final String mensaje;
 
     private Estado(int identificador) {
 
         this.Id = identificador;
+        //this.mensaje = mensajeActual;
 
     }
 

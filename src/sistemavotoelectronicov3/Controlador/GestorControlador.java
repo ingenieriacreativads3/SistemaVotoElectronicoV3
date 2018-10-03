@@ -29,7 +29,7 @@ public class GestorControlador extends Application{
     
     public static void comenzar(String []args){
         
-        launch(FXMLLoginController.class, args);
+        //launch(FXMLLoginController.class, args);
         
     }
     

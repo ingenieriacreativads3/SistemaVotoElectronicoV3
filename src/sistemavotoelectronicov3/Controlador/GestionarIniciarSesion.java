@@ -1,10 +1,11 @@
 package sistemavotoelectronicov3.Controlador;
 
-import javafx.application.Application;
-import static javafx.application.Application.launch;
-import javafx.stage.Stage;
-import sistemavotoelectronicov3.Modelo.Estado;
-import sistemavotoelectronicov3.Vista.FXMLLoginController;
+import javafx.application.*;
+import static javafx.application.Application.*;
+import javafx.stage.*;
+import static sistemavotoelectronicov3.Controlador.ControladorInterfaz.*;
+import sistemavotoelectronicov3.Modelo.*;
+import sistemavotoelectronicov3.Vista.*;
 
 /**
  *
@@ -12,7 +13,44 @@ import sistemavotoelectronicov3.Vista.FXMLLoginController;
  */
 public class GestionarIniciarSesion extends Application{
     
-    protected static Estado iniciarSesion(String[] args){
+    protected static Estado iniciarSesion(Stage stagePrincipal, String nombreRecibido, String passRecibido){
+        
+        //Establcer un valor por defecto
+        Estado estadoUserPass = Estado.ERROR;
+        
+        //Establecer un valor por defecto
+        Usuario usuarioSesionado = ModeloInterfaz.getUsuarioInvalido();
+        
+        //Verificar si son correctos los datos
+        ModeloInterfaz modeloNuevo = new ModeloInterfaz();
+        estadoUserPass = modeloNuevo.verificarUsserPass(nombreRecibido, passRecibido);
+        
+        //Si son correctos
+        if(estadoUserPass == Estado.USSER_PASS_CORRECTOS){
+            
+            usuarioSesionado = ModeloInterfaz.getUsuarioForNombre(nombreRecibido);
+            usuarioSesionado.
+                    
+        }
+        //...obtener el usuario a ingresar
+        //...establecer una sesion al usuario ingresado
+        //...mostrar una nueva pantalla con la informacion correspondiente
+        //...sino, mostrar un mensaje de error.
+        
+        try {
+            
+            FXMLVistaPrincipalController asd = new FXMLVistaPrincipalController();
+            asd.start(stagePrincipal);
+            
+        } catch (Exception e) {
+            
+        }
+        
+        return estadoUserPass;
+        
+    }
+    
+    protected static Estado comenzar(String[] args){
         
         Estado estadoDevolver = Estado.FRACASO;
         

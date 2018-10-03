@@ -23,7 +23,7 @@ public class SistemaVotoElectronicoV3 extends Application {
      */
     public static void main(String[] args) {
         //launch(args);
-        ControladorInterfaz.iniciarSesion(args);
+        ControladorInterfaz.comenzar(args);
         
     }
     

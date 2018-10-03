@@ -27,6 +27,7 @@ public class Valor{
     public static final int ESPACIOS_VERTICALES = 10;
     public static final int ESPACIOS_HORIZONTALES = 10;
     public static final int PADDING = 10;
+    public static Date sesion;
 
     private Valor(){}
     

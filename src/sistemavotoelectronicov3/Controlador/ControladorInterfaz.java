@@ -19,7 +19,7 @@ public class ControladorInterfaz{
     public static Stage stagePrincipal;
     
     public static void iniciarSesion(String[] args){
-        
+    
         //Usar este estado para algo
         Estado comenzoConExito = GestionarIniciarSesion.iniciarSesion(args);
         
