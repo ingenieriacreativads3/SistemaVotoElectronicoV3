@@ -24,7 +24,26 @@ public class Persona {
     private static int getNewId(){
 
         //Crear un nuevo identificador
-        int idActual = listaObjetos.size();
+        int idActual = 0;
+
+        //Obtener la cantidad de elementos no nulos del conjunto
+        if(listaObjetos != null){
+
+            if(listaObjetos.size() != 0){
+
+                idActual = listaObjetos.size();
+
+            }else{
+
+                //...se establecio un valor por defecto
+
+            }
+
+        }else{
+
+            //...se establecio unvalor por defecto
+
+        }
 
         //Buscar el siguiente identificador
         int siguienteIdentificador = Valor.SIGUIENTE_IDENTIFICADOR;

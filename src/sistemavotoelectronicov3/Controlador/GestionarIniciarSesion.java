@@ -29,7 +29,7 @@ public class GestionarIniciarSesion extends Application{
         if(estadoUserPass == Estado.USSER_PASS_CORRECTOS){
             
             usuarioSesionado = ModeloInterfaz.getUsuarioForNombre(nombreRecibido);
-            usuarioSesionado.
+            
                     
         }
         //...obtener el usuario a ingresar

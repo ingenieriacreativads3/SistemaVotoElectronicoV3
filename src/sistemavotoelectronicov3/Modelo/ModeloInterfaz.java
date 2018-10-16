@@ -47,14 +47,16 @@ public class ModeloInterfaz {
     
     public static Usuario getUsuarioInvalido(){
         
+        Usuario usuarioDevolver = Usuario.OBJETO_INVALIDO;
+        
         return Usuario.OBJETO_INVALIDO;
         
     }
     
-    public static Usuario setSesion(Usuario usuarioRecibido){
-        
-        Usuario.setSesion(usuarioRecibido);
-        
-    }
+//    public static Usuario setSesion(Usuario usuarioRecibido){
+//        
+//        Usuario.setSesion(usuarioRecibido);
+//        
+//    }
     
 }
