@@ -7,8 +7,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemavotoelectronicov3.Vista.FXMLLoginController">
    <children>
-      <Button fx:id="jBCancelar" layoutX="439.0" layoutY="304.0" mnemonicParsing="false" />
-      <Button fx:id="jBAceptar" layoutX="333.0" layoutY="208.0" mnemonicParsing="false" onMousePressed="#onMousePressed" />
+      <Button fx:id="jBCancelar" layoutX="474.0" layoutY="330.0" mnemonicParsing="false" />
+      <Button fx:id="jBAceptar" layoutX="325.0" layoutY="330.0" mnemonicParsing="false" onMousePressed="#onMousePressed" />
       <TextField fx:id="jTBUsuario" layoutX="333.0" layoutY="91.0" />
       <TextField fx:id="jTBPassword" layoutX="333.0" layoutY="138.0" />
       <Label fx:id="jLUsuario" layoutX="175.0" layoutY="95.0" />

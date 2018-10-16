@@ -62,7 +62,7 @@ public class FXMLLoginController  extends Application implements Initializable{
     private void onMousePressed(MouseEvent event) {
         
         ControladorInterfaz asd = new ControladorInterfaz();
-        asd.loginAceptar();
+        asd.iniciarSesion(jTBUsuario.getText(), jTBPassword.getText());
         
     }
     
