@@ -50,10 +50,10 @@ public class ControladorInterfaz{
         //...sino, mostrar un mensaje de error.
         
         try {
-            
+            System.out.println(1);
             FXMLVistaPrincipalController asd = new FXMLVistaPrincipalController();
             asd.start(stagePrincipal);
-            
+            System.out.println(2);
         } catch (Exception e) {
             
         }

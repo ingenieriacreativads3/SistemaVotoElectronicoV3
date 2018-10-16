@@ -15,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
+import sistemavotoelectronicov3.Controlador.*;
 import sistemavotoelectronicov3.Modelo.*;
 
 /**
@@ -26,8 +27,9 @@ public class FXMLVistaPrincipalController extends Application implements Initial
     
     private Set<Candidato> listaCandidatos = new HashSet<>();
 
-    @FXML
     private GridPane jGPPanel;
+    @FXML
+    private MenuItem jMIIngresarPersona;
 
     /**
      * Initializes the controller class.
@@ -46,11 +48,15 @@ public class FXMLVistaPrincipalController extends Application implements Initial
     @Override
     public void start(Stage primaryStage) throws Exception {
         
+        System.out.println(3);
+        primaryStage = ControladorInterfaz.stagePrincipal;
         Parent root = FXMLLoader.load(getClass().getResource("FXMLVistaPrincipal.fxml"));
         Scene scene = new Scene(root);
+        System.out.println(4);
         
         primaryStage.setScene(scene);
         primaryStage.show();
+        System.out.println(5);
         
     }
     
