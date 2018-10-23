@@ -5,6 +5,7 @@
  */
 package sistemavotoelectronicov3.Controlador;
 
+import Vista2.Login;
 import javafx.application.*;
 import javafx.stage.*;
 import sistemavotoelectronicov3.Modelo.*;
@@ -18,8 +19,15 @@ import sistemavotoelectronicov3.Vista.*;
 public class ControladorInterfaz{
     
     public static Stage stagePrincipal;
+
     
-    
+    public static void comenzar(){
+  
+        Login login = new Login();
+        login.show();
+        
+    }
+        
     public static void comenzar(String[] args){
         
         //Usar este estado para algo

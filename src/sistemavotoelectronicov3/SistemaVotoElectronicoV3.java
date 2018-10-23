@@ -1,5 +1,5 @@
 package sistemavotoelectronicov3;
-
+import Vista2.*;
 import sistemavotoelectronicov3.*;
 import javafx.application.*;
 import javafx.stage.*;
@@ -23,8 +23,13 @@ public class SistemaVotoElectronicoV3 extends Application {
      */
     public static void main(String[] args) {
         //launch(args);
-        ControladorInterfaz.comenzar(args);
-        
+        ControladorInterfaz.comenzar();
+
+    }
+    
+    
+    public static void asd(){
+        System.exit(0);
     }
     
 }

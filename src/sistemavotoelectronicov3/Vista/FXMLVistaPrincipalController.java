@@ -29,13 +29,14 @@ public class FXMLVistaPrincipalController extends Application implements Initial
 
     private GridPane jGPPanel;
     @FXML
-    private MenuItem jMIIngresarPersona;
+    private Button jbBoton;
 
     /**
      * Initializes the controller class.
      * @param url
      * @param rb
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
